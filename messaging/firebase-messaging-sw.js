@@ -33,3 +33,9 @@ messaging.setBackgroundMessageHandler(function(payload) {
       notificationOptions);
 });
 // [END background_handler]
+
+
+// try show notification in Firefox
+messaging.onMessage(function(payload) {
+    return self.registration.showNotification(payload.title, payload);
+});
